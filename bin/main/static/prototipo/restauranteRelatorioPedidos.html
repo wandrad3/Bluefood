@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/bf_estiloSistema.css"/>
+        <title>BlueFood</title>
+        
+    </head>
+    <body>
+        <header>
+            
+            <div id="divLogotipoSistema">
+               <span id="spanAuxiliarDeAlinhamentoVertical"></span>
+               <img id="imgLogotipoSistema" src="images/bf_logotipoSistema.png"> 
+            </div >
+            <div id="divUsuarioLogado">
+                Olá, Nome do Usuário!
+                <br/>
+              
+            </div>
+        </header>
+        <br><br>
+        
+
+        
+        <br><br>
+        <!--cabeçalho - fim -->
+        <br/><br/>
+        <div>
+            <h1>Relatorio de Pedidos</h1>
+            
+            <form method="post" action="">
+                <fieldset>
+                    <label for="numero">Número:</label><br/>
+                    <input type="text" id="numero" name="numero"/><br/>
+                    <label for="inicio">Início:</label><br/>
+                    <input type="date" id="inicio" name="inicio"/><br/>
+                    <label for="fim">Fim:</label><br/>
+                    <input type="date" id="fim" name="fim"/><br/><br/>
+                    <input type="button" value="Buscar"/><br>
+                </fieldset>
+                
+                
+            </form>
+        </div>
+        <br/><br/>
+        <div>
+            <table>
+                <tr>
+                    <th>Pedido</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td><input type="button" value="#33656" onclick = "location.href = 'restaurantePedido.html'"//></th>
+                    <td>Eduardo Assis</th>
+                    <td>Rua das Figueiras, 84</th>
+                    <td>R$  50,00</th>
+                </tr>
+                <tr>
+                    <td><input type="button" value="#875526" onclick = "location.href = 'restaurantePedido.html'"//></th>
+                    <td>Wesley Santos</th>
+                    <td>Rua dos Vianas, 8755</th>
+                    <td>R$  27,70</th>
+                </tr>
+                <tr>
+                    <td><input type="button" value="#25805" onclick = "location.href = 'restaurantePedido.html'"//></th>
+                    <td>Débora Luena</th>
+                    <td>Maria Amália B Mello, 100</th>
+                    <td>R$  85,00</th>
+                </tr>
+                <tr>
+                    <td><input type="button" value="#21256" onclick = "location.href = 'restaurantePedido.html'"//></th>
+                    <td>Maico Silva</th>
+                    <td>Agostinho Carrara, 26</th>
+                    <td>R$  50,00</th>
+                </tr>
+            </table>
+            <br/><br/>
+            
+            
+        </div>
+        <input type="button" value="Voltar" onclick = "location.href = 'restauranteHome.html'"//>
+        
+        
+         <!--Rodapé - início -->
+    </body>
+</html>

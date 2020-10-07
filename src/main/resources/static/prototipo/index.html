@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/bf_estiloSistema.css"/>
+        <title>BlueFood</title>
+        
+    </head>
+    <body>
+        <header>
+            
+            <div id="divLogotipoSistema">
+               <span id="spanAuxiliarDeAlinhamentoVertical"></span>
+               <img id="imgLogotipoSistema" src="images/bf_logotipoSistema.png"> 
+            </div>
+        </header>
+        <br><br>
+        
+        <!--cabeçalho - fim -->
+        <div >
+            <img id="imgIconeUsuario" src="images/bf_iconeusuario.png">
+            <h1>Autenticação</h1>
+            <form method="post" action="">
+                <fieldset>
+                    <input type="text" name="e-mail" placeholder="mail@outlook.com">
+                    <input type="password" name="senha" placeholder="senha">
+                    <input type="button" value="entrar" name="enviar" onclick="location.href = 'clienteHome.html'">
+        
+                  
+                </fieldset>
+            
+             </form>
+            <br>
+            <div id="mensagemDeErro">
+                Aqui vai um exemplo de mensagem de erro
+            </div><br><br>
+            
+            <input type="button" value="Gostaria de criar a minha conta de cliente" onclick="location.href = 'clienteCadastro.html'">
+            <br>
+            <input type="button" value="Gostaria de criar a minha conta de restaurante" onclick="location.href = 'restauranteCadastro.html'">
+            
+            
+        </div>
+        <!--Rodapé - início -->
+    </body>
+</html>

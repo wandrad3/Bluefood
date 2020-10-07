@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}" th:with="link=@{/cliente/home}">
+<html>
+    <body>
+    		<div layout:fragment="content"> 
+	         
+	            <div>
+	               <img id="imgRestauranteOpcao" th:src="@{/images/logotipo/} + ${restaurante.logotipo}"/><br/>
+	               <span th:text="${restaurante.nome}"></span>
+	               <br/>
+	               <span th:text="${restaurante.getCategoriasAsText()}"></span>
+	               <br/>
+	               <span th:text = "'Tempo médio de entrega: ' + ${restaurante.calcularTempoEntrega(cep)} + 'min'"></span>
+	               <br/>
+	               <span th:text="'Taxa de entrega: ' + ${#numbers.formatCurrency(restaurante.taxaDeEntrega)}"></span>
+	               <br/>
+	               
+	            </div>
+	            <div>
+	                <h1>Opções</h1>
+		               <form id="filterForm" method="get" th:action="@{/cliente/restaurante}" >
+		                <fieldset>
+		                <input type="hidden" id="categoria" name="categoria" />
+		                    	<input type="hidden" id="restauranteId" name="restauranteId" th:value=${restaurante.id} />
+		                    	
+		                    <legend>Filtros</legend>
+		                   
+		                    <div  style="display:inline;" th:each="categoria : ${categorias}">
+		                    	<input  
+		                    	type="button"
+		                    	 th:value="${categoria}" 
+		                    	  th:data-categoria="${categoria} "
+		                    	  onclick="filterCardapio(this.getAttribute('data-categoria'));"
+		                    	 th:id="${categoria} == ${categoriaSelecionada} ? 'inputSelecionado' : ''"/>
+		                    
+		                    </div>
+		               </div>	                    
+		                </fieldset>
+		                </form>
+	                <br/>
+	        
+	            
+	            
+	            <div>
+	            	<h1>Destaques</h1>
+	                <div id="divRestauranteOpcao" th:each="item : ${ItensComDestaque}">
+	                    <img id="imgRestauranteOpcao" th:src="@{/images/comidas/} + ${item.imagem}"/>
+	                    <br/>
+	                    <span id="restauranteOpcaoTitulo" th:text="${item.nome}"></span>
+	                    <br/>
+	                    <span  th:text="${item.descricao}"></span>
+	                    <br/>
+	                    <span  th:text="${#numbers.formatCurrency(item.preco)}"></span>
+	                    <form method="get" th:action="@{/cliente/carrinho/adcionar}">
+	                    <input type="hidden" th:value="${item.id}" name="itemId" />
+	                        <Label for="quatidade">Quantidade:</Label>
+	                        <br/>
+	                        <select name="quantidade" id="quantidade">
+	                            <option>1</option>
+	                            <option>2</option>
+	                            <option>3</option>
+	                            <option>4</option>
+	                        </select>
+	                        <br/><br/>
+	                        Observações:
+	                        <br/>
+	                        <textarea name="observacoes"></textarea>
+	                        <br/><br/>
+	                        <input type="submit" value="Adcionar ao carrinho"/>
+	                    </form>
+	               	</div>
+	                <span th:if="${ItensComDestaque.size() == 0}">Não há destaques as serem mostrados</span>
+	                
+	                <div>
+	                
+	                <h1>Menu</h1>
+	                 <div id="divRestauranteOpcao" th:each="itemSemDestaque : ${ItensSemDestaque} ">
+	                     <img id="imgRestauranteOpcao" th:src="@{/images/comidas/} + ${itemSemDestaque.imagem}"/>
+	                    <br/>
+	                    <span id="restauranteOpcaoTitulo" th:text="${itemSemDestaque.nome}"></span>
+	                    <br/>
+	                    <span  th:text="${itemSemDestaque.descricao}"></span>
+	                    <br/>
+	                    <span  th:text="${#numbers.formatCurrency(itemSemDestaque.preco)}"></span>
+	                    <form method="get" th:action="@{/cliente/carrinho/adcionar}">
+	                    <input type="hidden" th:value="${itemSemDestaque.id}" name="itemId" />
+	                        <Label for="quatidade">Quantidade:</Label>
+	                        <br/>
+	                        <select name="quantidade" id="quantidade">
+	                            <option>1</option>
+	                            <option>2</option>
+	                            <option>3</option>
+	                            <option>4</option>
+	                        </select>
+	                        <br/><br/>
+	                        Observações:
+	                        <br/>
+	                        <textarea name="observacoes"></textarea>
+	                        <br/><br/>
+	                        <input type="submit" value="Adcionar ao carrinho" />
+	                    </form>
+	                  </div>
+
+	               
+	                </div>
+	                <input type="button" value="Voltar" th:onclick="'location.href= \'' + @{/cliente/home} + '\';'"/>
+	           </div>
+          </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+<html>
+    <body>
+    <div layout:fragment="content">
+	        <br/><br/>
+	        <div>
+	            <h1>Configurações</h1>
+	            <br/>
+	            <input type="button" value="Dados Basicos" th:onclick = "'location.href =\'' + @{/restaurante/edit} + '\';'"/><br/>
+	            <input type="button" value="Categoria de comida" th:onclick = "'location.href =\'' + @{/restaurante/comidas} + '\';'"/><br/>
+	            <input type="button" value="Relatorio de Pedidos"  th:onclick = "'location.href =\'' + @{/restaurante/relatorio/pedidos} + '\';'"><br/>
+	            <input type="button" value="Relatorio de Itens" th:onclick = "'location.href =\'' + @{/restaurante/relatorio/itens} + '\';'"/><br/>
+	            <input type="button" value="Sair" th:onclick = "'location.href =\'' + @{/logout} + '\';'"/><br/>
+	        </div>
+	        <div>
+	            <h1>Pedidos em andamento</h1>
+	            
+	            <div th:if="${pedidos.size() > 0}" th:each="pedido : ${pedidos}">
+	            	<input type="button" th:value="${pedido.formattedId}" th:onclick = "'location.href =\'' + @{/restaurante/pedido} + '?pedidoId='  + ${pedido.id} + '\';'"/><br/>
+	            </div>
+	            <span th:if="${pedidos.size() == 0}"> Não há pedidos a serem listados</span>
+	            
+	        </div>
+	        <br/><br/>
+       </div>
+      </body>
+</html>

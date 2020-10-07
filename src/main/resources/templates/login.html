@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+<body>
+	<div layout:fragment="content">
+		<div>
+			<img id="imgIconeUsuario" th:src="@{/images/bf_iconeusuario.png}" />
+			<h1>Autenticação</h1>
+			<form method="post" th:action="@{/login}">
+				<fieldset>
+					<input type="text" name="username" placeholder="mail@outlook.com" />
+					<input type="password" name="password" placeholder="senha" /> 
+					<input type="submit" value="entrar" name="enviar" onclick="location.href = 'clienteHome.html'" />
+
+
+				</fieldset>
+
+			</form>
+			<br />
+			<div id="mensagemDeErro" th:if="${msg!=null}">
+			<span th:text="${msg}"></span>
+			
+			</div>
+			<br />
+			<br /> 
+			
+			<form method="get" th:action="@{/public/cliente/new}">
+				<input type="submit" value="Gostaria de criar a minha conta de cliente" /> <br />
+			
+			</form> 
+			<form method="get" th:action="@{/public/restaurante/new}">
+				<input type="submit" value="Gostaria de criar a minha conta de restaurante" /> <br />
+			
+			</form> 
+			
+		</div>
+	</div>
+</body>
+</html>

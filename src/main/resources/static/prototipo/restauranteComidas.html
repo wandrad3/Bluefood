@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/bf_estiloSistema.css"/>
+        <title>BlueFood</title>
+        
+    </head>
+    <body>
+        <header>
+            
+            <div id="divLogotipoSistema">
+               <span id="spanAuxiliarDeAlinhamentoVertical"></span>
+               <img id="imgLogotipoSistema" src="images/bf_logotipoSistema.png"> 
+            </div >
+            <div id="divUsuarioLogado">
+                Olá, Nome do Usuário!
+                <br/>
+              
+            </div>
+        </header>
+        <br><br>
+        
+
+        
+        <br><br>
+        <!--cabeçalho - fim -->
+        
+        <div>
+            <h1>Comidas</h1>
+            
+            <br/>
+            <span>Pizza de Calabresa</span>
+            <br/>
+            <span>Pizzas</span>
+            <br/>
+            <span>Massa fina, queijo, calabresa e pimenta</span>
+            <br/>
+            <span>R$45,00</span>
+            <br/>
+            <input type="button" value="Remover"/> <br/>
+            
+            <br/><br/>
+            
+            <br/>
+            <span>Hambúrguer</span>
+            <br/>
+            <span>Hambúrguer</span>
+            <br/>
+            <span>pão, hamburguer 200g, queijo, alface e bacon</span>
+            <br/>
+            <span>R$30,00</span></br>
+            <input type="button" value="Remover"/> <br/>
+        </div>
+        <br/><br/>
+        
+        <div>
+        <h1>Nova comida</h1>
+        <form method="post" action="">
+            <fieldset>
+                <label for="item">Item:</label><br/>
+                <input type="text" name="item" id="item"/><br/>
+                <label for="descricao">Descrição:</label><br/>
+                <input type="text" name="descricao" id="descricao"/><br/>
+                <label for="preco">Preço:</label><br/>
+                <input type="text" name="preco" id="preco"/><br/>
+                <label for="categoria">Categoria de Comida:</label><br/>
+                <input type="text" name="categoria" id="categoria"/><br/>
+                <label for="destaque">Destaque:</label><br/>
+                <input type="checkbox" name="destaque" id="destaque"/><br/>
+                <input type="button" value="Salvar"/><br/>
+            </fieldset>
+            
+            
+        </form>
+            
+        </div>
+        
+        <br/><br/>
+         <div>
+            <input type="button" value="Voltar" onclick = "location.href = 'restauranteHome.html'"//><br/>
+         </div>
+        
+        <!--Rodapé - início -->
+    </body>
+</html>

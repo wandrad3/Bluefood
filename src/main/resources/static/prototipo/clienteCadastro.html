@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/bf_estiloSistema.css"/>
+        <title>BlueFood</title>
+        
+    </head>
+    <body>
+        <header>
+            
+            <div id="divLogotipoSistema">
+               <span id="spanAuxiliarDeAlinhamentoVertical"></span>
+               <img id="imgLogotipoSistema" src="images/bf_logotipoSistema.png"> 
+            </div >
+            
+        </header>
+        <br><br>
+        
+
+        
+        <br><br>
+        <!--cabeçalho - fim -->
+        <!--cabeçalho - fim -->
+        <div>
+            <h1>Cadastro de Cliente</h1>
+            <div id="mensagemDeSucesso">
+                Aqui vai um exemplo de mensagem de sucesso
+            </div><br>
+            <form method="post" action="">
+                <fieldset>
+                    <label for="nome">Nome:</label><br/>
+                    <input id="nome" type="text" name="nome" placeholder="nome"/><br/><br/>
+                    <label for="cpf">CPF:</label><br/>
+                    <input class="inputError" id="cpf" type="text" name="cpf" placeholder=".........-.."/><br/><br/>
+                    <div id="mensagemDeErro">Aqui vai um exemplo de mensagem de erro</div>
+
+                    <label for="email">email:</label><br/>
+                    <input id="email" type="text" name="email" placeholder="jose@gmail.com"/><br/><br/>
+                    <label for="telefone">Telefone:</label><br/>
+                    <input id="telefone" type="text" name="telefone" placeholder="phone"/><br/><br/>
+                    <label for="cep">CEP:</label><br/>
+                    <input id="cep" type="text" name="cep" placeholder="cep"/><br/><br/>
+                    <label for="senha">senha:</label><br/>
+                    <input id="senha" type="password" name="senha" placeholder="*******"/><br/><br/>
+                    
+                    <input type="button" value="Cadastrar" onclick = "location.href = 'clienteHome.html'"/>
+                </fieldset>
+                <br/>
+                <input type="button" value="Voltar" onclick = "location.href = 'index.html'"/>
+            
+             </form>
+            
+        </div>
+        
+         <!--Rodapé - início -->
+    </body>
+</html>

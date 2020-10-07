@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/bf_estiloSistema.css"/>
+        <title>BlueFood</title>
+        
+    </head>
+    <body>
+        <header>
+            
+            <div id="divLogotipoSistema">
+               <span id="spanAuxiliarDeAlinhamentoVertical"></span>
+               <img id="imgLogotipoSistema" src="images/bf_logotipoSistema.png"> 
+            </div >
+            <div id="divUsuarioLogado">
+                Olá, Nome do Usuário!
+                <br/>
+              
+            </div>
+        </header>
+        <br><br>
+        
+
+        
+        <br><br>
+        <!--cabeçalho - fim -->
+        <div>
+            <h1>Cadastro do Restaurante</h1>
+            <form method="post" action="">
+                <fieldset>
+                    <label for="nome">Nome:</label><br/>
+                    <input type="text" name="nome" id="name"/><br/>
+                    <label for="cnpj">Cnpj:</label><br/>
+                    <input type="text" name="cnpj" id="cnpj"/><br/>
+                    <label for="email">Email:</label><br/>
+                    <input type="text" name="email" id="email"/><br/>
+                    <label for="telefone">telefone:</label><br/>
+                    <input type="text" name="telefone" id="telefone"/><br/>
+                    <label for="cep">Cep:</label><br/>
+                    <input type="text" name="cep" id="cep"/><br/>
+                    <label for="categoria">Categoria:</label><br/>
+                    <select name="categoria" id="categoria">
+                        <option>Hambúrguer</option>
+                        <option>Pizzas</option>
+                        <option>Saladas</option>
+                        <option>Refrigerante</option>
+                    </select><br/>
+                    <label for="logotipo">Logotipo:</label><br/>
+                    <input type="file" name="logotipo" id="logotipo" placeholder="Selecionar..."/><br/>
+                    
+                    <span>Eventual mensagem de erro</span><br/>
+                    
+                    <input type="button" value="Cadastrar" onclick = "location.href = 'restauranteHome.html'"//>
+                </fieldset>
+            </form>
+        </div>
+        
+        <br/><br/>
+        <div>
+           <input type="button" value="Voltar" onclick = "location.href = 'index.html'"/><br/>
+        </div>
+        <!--Rodapé - início -->
+    </body>
+</html>

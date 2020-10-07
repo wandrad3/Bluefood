@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/bf_estiloSistema.css"/>
+        <title>BlueFood</title>
+        
+    </head>
+    <body>
+        <header>
+            
+            <div id="divLogotipoSistema">
+               <span id="spanAuxiliarDeAlinhamentoVertical"></span>
+               <img id="imgLogotipoSistema" src="images/bf_logotipoSistema.png"> 
+            </div >
+            <div id="divUsuarioLogado">
+                Olá, Nome do Usuário!
+                <br/>
+              <img id="imgIconeCarrinho" src="images/bf_iconeCarrinho.png">
+            </div>
+        </header>
+        <br><br>
+        
+
+        
+        <br><br>
+        <!--cabeçalho - fim -->
+         <div>
+            <h1>SEU PEDIDO</h1>
+            <img src="images/sys_restauranteSbubby.png"/>
+            
+         </div>
+         <br/><br/>
+         <div>
+            <span>Pizza Calabresa</span><br/>
+            <span>Qtd: 1</span><br/>
+            <span>(Exemplo de observação quando houver)</span><br/>
+            <span>RS 45,00</span><br/><br/>
+            
+            <input type="button" value="Remover" />
+         </div>
+         <br/><br/>
+         <div>
+            <span>Hamburguer</span><br/>
+            <span>Qtd: 2</span><br/>
+            <span>(Exemplo de observação quando houver)</span><br/>
+            <span>RS 30,00</span><br/><br/>
+            
+            <input type="button" value="Remover" />
+         </div>
+         <br/><br/>
+         
+         <div>
+            <span>Taxa de entrega</span><br/>
+            <span>R$ 15,00</span>
+         </div>
+         <div>
+            <span>Total</span><br/>
+            <span>R$ 90,00</span>
+         </div>
+         <br/><br/>
+         
+         <div>
+            <span>Cartão de Crédito</span><br/>
+            <input type="text" name="cartao" onkeypress="return isNumberKey(event)"/><br/>
+            
+         </div><br/>
+         <div>
+            <input type="button" value="Enviar Pedido"/><br/>
+            <input type="button" value="Voltar" onclick = "location.href = 'clienteHome.html'"//><br/>
+         </div>
+         
+         <script>
+            function isNumberKey(evt){
+                var charCode = (evt.which) ? evt.which : event.keyCode;
+                if(charCode>31 &&(charCode<48 ||charCode>57)){
+                    return false;
+                return true;
+                }
+            }
+         </script>
+          <!--Rodapé - início -->
+    </body>
+</html>
