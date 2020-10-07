@@ -1,5 +1,7 @@
 package br.com.softblue.bluefood.infraestructure.web.controller;
 
+import java.util.NoSuchElementException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +26,7 @@ public class PedidoController {
 
 			Model model) {
 		
-		Pedido pedido = pedidoRepository.findById(pedidoId).orElseThrow();
+		Pedido pedido = pedidoRepository.findById(pedidoId).orElseThrow(NoSuchElementException::new);
 		model.addAttribute("pedido", pedido);
 		
 

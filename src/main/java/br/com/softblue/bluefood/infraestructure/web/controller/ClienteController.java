@@ -1,6 +1,7 @@
 package br.com.softblue.bluefood.infraestructure.web.controller;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
@@ -74,7 +75,7 @@ public class ClienteController {
 	private String edit(Model model, Cliente cliente) {
 
 		Integer clienteId = SecurityUtils.loggedCliente().getId();
-		cliente = clienteRepository.findById(clienteId).orElseThrow();
+		cliente = clienteRepository.findById(clienteId).orElseThrow(NoSuchElementException::new);
 		model.addAttribute("cliente", cliente);
 
 		ControllerHelper.setEditMode(model, true);
@@ -121,7 +122,7 @@ public class ClienteController {
 	public String viewRestaurante(@RequestParam(value = "restauranteId") Integer restauranteid,
 			@RequestParam(value = "categoria", required = false) String categoria, Model model) {
 
-		Restaurante restaurante = restauranteRepository.findById(restauranteid).orElseThrow();
+		Restaurante restaurante = restauranteRepository.findById(restauranteid).orElseThrow(NoSuchElementException::new);
 		model.addAttribute("restaurante", restaurante);
 		model.addAttribute("cep", SecurityUtils.loggedCliente().getCep());
 
