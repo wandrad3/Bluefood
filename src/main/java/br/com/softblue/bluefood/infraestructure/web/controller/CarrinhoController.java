@@ -50,7 +50,7 @@ public class CarrinhoController {
 		try {
 			carrinho.adcionarItem(itemCardapio, quantidade, observacoes);
 		} catch (RestauranteDiferenteException e) {
-			model.addAttribute("msg", "Não é possível adcionar itens de restaurantes diferentes no mesmo carrinho");
+			model.addAttribute("msg", "NÃ£o Ã© possÃ­vel adcionar itens de restaurantes diferentes no mesmo carrinho");
 		}
 
 		return "cliente-carrinho";

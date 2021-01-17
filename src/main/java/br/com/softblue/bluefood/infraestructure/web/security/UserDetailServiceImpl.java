@@ -28,7 +28,7 @@ public class UserDetailServiceImpl implements UserDetailsService{
 			usuario = restauranteRepository.findByEmail(username);
 			
 			if(usuario == null) {
-				throw new UsernameNotFoundException("Usu·rio n„o localizado");
+				throw new UsernameNotFoundException("Usu√°rio n√£o localizado");
 			}
 		}
 		

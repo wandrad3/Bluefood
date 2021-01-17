@@ -35,19 +35,19 @@ public class ItemCardapio implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotBlank(message = "O nome n„o pode ser vazio")
+	@NotBlank(message = "O nome n√£o pode ser vazio")
 	@Size(max = 50)
 	private String nome;
 
-	@NotBlank(message = "A categoria n„o pode ser vazia")
+	@NotBlank(message = "A categoria n√£o pode ser vazia")
 	@Size(max = 25)
 	private String categoria;
 
-	@NotBlank(message = "A descriÁ„o n„o pode ser vazia")
+	@NotBlank(message = "A descri√ß√£o n√£o pode ser vazia")
 	@Size(max = 80)
 	private String descricao;
 
-	@NotNull(message = "O preÁo n„o pode ser nulo")
+	@NotNull(message = "O pre√ßo n√£o pode ser nulo")
 	@Min(0)
 	private BigDecimal preco;
 
@@ -57,7 +57,7 @@ public class ItemCardapio implements Serializable {
 	@NotNull
 	private boolean destaque;
 
-	@UploadConstraint(acceptedTypes = FileType.PNG, message = "Tipo de arquivo inv·lido")
+	@UploadConstraint(acceptedTypes = FileType.PNG, message = "Tipo de arquivo inv√°lido")
 	private transient MultipartFile imagemFile;
 
 	@ManyToOne

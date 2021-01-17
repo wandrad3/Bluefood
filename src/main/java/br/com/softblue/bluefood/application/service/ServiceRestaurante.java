@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
 
@@ -41,10 +42,10 @@ public class ServiceRestaurante {
 	public void saveRestaurante(Restaurante restaurante) throws ValidationException {
 
 		if (!validateEmail(restaurante.getEmail(), restaurante.getId())) {
-			throw new ValidationException("O e-mail est· duplicado");
+			throw new ValidationException("O e-mail est√° duplicado");
 		}
 		if (restaurante.getId() != null) {
-			Restaurante restauranteDB = restauranteRepository.findById(restaurante.getId()).orElseThrow();
+			Restaurante restauranteDB = restauranteRepository.findById(restaurante.getId()).orElseThrow(NoSuchElementException::new);
 			restaurante.setLogotipo(restauranteDB.getLogotipo());
 			restaurante.setSenha(restauranteDB.getSenha());
 
@@ -86,7 +87,7 @@ public class ServiceRestaurante {
 		} else if (filter.getSearchType() == SearchType.Categoria) {
 			restaurantes = restauranteRepository.findByCategorias_Id(filter.getCategoriaId());
 		} else {
-			throw new IllegalStateException("O tipo " + filter.getSearchType() + " n„o È suportado");
+			throw new IllegalStateException("O tipo " + filter.getSearchType() + " n√£o √© suportado");
 		}
 
 		Iterator<Restaurante> it = restaurantes.iterator();

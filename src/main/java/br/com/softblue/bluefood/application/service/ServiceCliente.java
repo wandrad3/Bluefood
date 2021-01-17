@@ -1,5 +1,7 @@
 package br.com.softblue.bluefood.application.service;
 
+import java.util.NoSuchElementException;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,11 @@ public class ServiceCliente {
 	@Transactional
 	public void saveCliente(Cliente cliente) throws ValidationException {
 		if (!validateEmail(cliente.getEmail(), cliente.getId())) {
-			throw new ValidationException("O e-mail est· duplicado");
+			throw new ValidationException("O e-mail est√° duplicado");
 		}
 		
 		if (cliente.getId() != null) {
-			Cliente clienteDB = clienteRepository.findById(cliente.getId()).orElseThrow();
+			Cliente clienteDB = clienteRepository.findById(cliente.getId()).orElseThrow(NoSuchElementException::new);
 			cliente.setSenha(clienteDB.getSenha());
 		
 		} else {

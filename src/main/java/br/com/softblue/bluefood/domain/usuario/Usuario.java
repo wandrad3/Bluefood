@@ -28,26 +28,26 @@ public class Usuario implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@NotBlank(message = "Nome n„o pode ser vazio")
+	@NotBlank(message = "Nome n√£o pode ser vazio")
 	@Size(max = 80)
 	@Column(length = 80, nullable = false)
 	private String nome;
 	
-	@NotBlank(message = "Email n„o pode ser vazio")
-	@Email(message = "E-mail inv·lido")
+	@NotBlank(message = "Email n√£o pode ser vazio")
+	@Email(message = "E-mail inv√°lido")
 	@Size(max = 60)
 	@Column(length = 60, nullable = false)
 	private String email;
 	
-	@NotBlank(message = "Senha n„o pode ser vazia")
+	@NotBlank(message = "Senha n√£o pode ser vazia")
 	@Size(max = 80)
 	@Column(length = 80, nullable = false)
 	private String senha;
 	
-	@NotBlank(message = "Telefone n„o pode ser vazio")
+	@NotBlank(message = "Telefone n√£o pode ser vazio")
 	@Size(max = 11)
 	@Column(length = 11, nullable = false)
-	@Pattern(regexp = "[0-9]{11}",message="Numero de telefone inv·lido")
+	@Pattern(regexp = "[0-9]{11}",message="Numero de telefone inv√°lido")
 	private String telefone;
 	
 	public void encryptPassword() {

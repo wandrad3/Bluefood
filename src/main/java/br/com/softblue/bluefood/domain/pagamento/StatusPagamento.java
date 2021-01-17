@@ -2,9 +2,9 @@ package br.com.softblue.bluefood.domain.pagamento;
 
 public enum StatusPagamento {
 	
-	NaoAutorizado("N„o autorizado pela instituiÁ„o financeira"),
+	NaoAutorizado("NÔøΩo autorizado pela institui√ß√£o financeira"),
 	Autorizado ("Autorizado"),
-	Cartaoinvalido ("Cart„o inv·lido ou bloqueado");
+	Cartaoinvalido ("Cart√£o inv√°lido ou bloqueado");
 	
 	private String descricao;
 

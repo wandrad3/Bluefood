@@ -19,6 +19,7 @@ import br.com.softblue.bluefood.domain.pedido.PedidoRepository;
 import br.com.softblue.bluefood.domain.pedido.RelatorioItemFaturamento;
 import br.com.softblue.bluefood.domain.pedido.RelatorioItemFilter;
 import br.com.softblue.bluefood.domain.pedido.RelatorioPedidoFilter;
+import br.com.softblue.bluefood.util.CollectionUtil;
 import br.com.softblue.bluefood.util.IOUtil;
 
 @Service
@@ -33,14 +34,14 @@ public class RelatorioService {
 
 		if (pedidoId != null) {
 			Pedido pedido = pedidoRepository.findByIdAndRestauranteId(pedidoId, restauranteId);
-			return List.of(pedido);
+			return CollectionUtil.listOf(pedido);
 		}
 
 		LocalDate dataInicial = filter.getDataInicial();
 		LocalDate dataFinal = filter.getDataFinal();
 
 		if (dataInicial == null) {
-			return List.of();
+			return CollectionUtil.listOf();
 		}
 
 		if (dataFinal == null) {
@@ -62,7 +63,7 @@ public class RelatorioService {
 		LocalDate dataFinal = filter.getDataFinal();
 
 		if (dataInicial == null) {
-			return List.of();
+			return CollectionUtil.listOf();
 		}
 
 		if (dataFinal == null) {
